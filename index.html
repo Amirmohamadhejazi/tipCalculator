@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <link rel="stylesheet" href="style/bootstrap.min.css">
+        <link rel="stylesheet" href="style/font/css/font.css">
+        <link rel="stylesheet" href="style/font/css/fontStyle.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style/main.css">
+        <title>Tip calculator</title>
+    </head>
+    <body class="flex-center flex-column  bg_White trn3 container " >
+
+    <div class="IconLogo">
+        <img src="./pic/logo.svg" width="100%" height="100%" alt="icon"/>
+    </div>
+     <div class="boxContent p-4 bg-white mt-5 flexColumnRowMobileDesktop">
+            <div class="boxCalculate">
+                <form class="boxFormCalculate">
+                    <div class="flex-center flex-column">
+                        <span class="w-100 text-left InterBold c_label fontSize20">Bill</span>
+                        <div class="input-group flex-nowrap">
+                            <span class="input-group-text iconInput"  id="addon-Bill"><img src="./pic/icon-dollar.svg"  width="100%" height="100%"  alt=""></span>
+                            <input  type="number" class="form-control" placeholder="0" aria-label="Bill" aria-describedby="addon-wrapping">
+                        </div>
+                    </div>
+
+                    <div class="flex-center flex-column mt-5">
+                        <span class="w-100 text-left InterBold c_label fontSize20 ">Select Tip %</span>
+                        <div class="d-flex flex-row flex-wrap InterBold">
+                            <div class="boxSelectTip"><span>5%</span></div>
+                            <div class="boxSelectTip"><span>10%</span></div>
+                            <div class="boxSelectTip"><span>15%</span></div>
+                            <div class="boxSelectTip"><span>25%</span></div>
+                            <div class="boxSelectTip"><span>50%</span></div>
+                        </div>
+                    </div>
+
+
+                    <div class="flex-center flex-column mt-5">
+                        <span class="w-100 text-left InterBold c_label fontSize20">Number of People</span>
+                        <div class="input-group flex-nowrap ">
+                            <span class="input-group-text iconInput" id="2"><img src="./pic/icon-person.svg" width="100%" height="100%" alt=""></span>
+                            <input type="number" class="form-control inputCustom" placeholder="0" aria-label="Bill" aria-describedby="addon-wrapping"  >
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="boxResult flex-center flex-column">
+
+                <div class="w-100 flex-center flex-column">
+                    <div class="w-75 d-flex flex-row align-items-center justify-content-between">
+                        <div class="d-flex flex-column InterBold fontSize18">
+                            <span class="text-white">Tip Amount</span>
+                            <span class="c_underTitleResult">/ person</span>
+                        </div>
+                        <span class="InterBold fontSize40 c_calcPrice">$0.00</span>
+                    </div>
+                    <div class="w-75 d-flex flex-row align-items-center justify-content-between">
+                        <div class="d-flex flex-column InterBold fontSize18">
+                            <span class="text-white mt-5">Total</span>
+                            <span class="c_underTitleResult">/ person</span>
+                        </div>
+                        <span class="InterBold fontSize40 c_calcPrice mt-5">$0.00</span>
+                    </div>
+                </div>
+
+                <div class="btnReset mt-5 InterBold ">
+                    Reset
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+    <script src="./js/main.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+</html>
