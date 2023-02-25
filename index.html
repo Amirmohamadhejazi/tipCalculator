@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="style/main.css">
         <title>Tip calculator</title>
     </head>
+
     <body class="flex-center flex-column  bg_White trn3 container " >
 
     <div class="IconLogo">
@@ -18,9 +19,12 @@
             <div class="boxCalculate">
                 <form class="boxFormCalculate">
                     <div class="flex-center flex-column">
-                        <span class="w-100 text-left InterBold c_label fontSize20">Bill</span>
-                        <div class="input-group flex-nowrap">
-                            <span class="input-group-text iconInput"  id="addon-Bill"><img src="./pic/icon-dollar.svg"  width="100%" height="100%"  alt=""></span>
+                        <div class="w-100 d-flex flex-row align-items-center">
+                            <span class="w-100 text-left InterBold c_label fontSize20">Bill</span>
+                            <span class="w-100 text-right InterLight c_label textError c-error" id="textErrorBill"></span>
+                        </div>
+                        <div class="input-group flex-nowrap position-relative" >
+                            <div class="position-absolute iconInput" style="z-index: 4"><img src="./pic/icon-dollar.svg"  width="100%" height="100%"  alt="icon"></div>
                             <input  type="number" class="form-control" placeholder="0" aria-label="Bill" aria-describedby="addon-wrapping" name="bill" id="bill">
                         </div>
                     </div>
@@ -39,9 +43,12 @@
 
 
                     <div class="flex-center flex-column mt-5">
-                        <span class="w-100 text-left InterBold c_label fontSize20">Number of People</span>
-                        <div class="input-group flex-nowrap ">
-                            <span class="input-group-text iconInput" id="2"><img src="./pic/icon-person.svg" width="100%" height="100%" alt=""></span>
+                        <div class="w-100 d-flex flex-row align-items-center">
+                            <span class="w-100 text-left InterBold c_label fontSize20">Number of People</span>
+                            <span class="w-100 text-right InterLight c_label textError c-error" id="textErrorNumberOfPeople"></span>
+                        </div>
+                        <div class="input-group flex-nowrap position-relative">
+                            <div class="position-absolute iconInput" style="z-index: 4"><img src="./pic/icon-person.svg"  width="100%" height="100%"  alt="icon"></div>
                             <input type="number" class="form-control inputCustom" placeholder="0" aria-label="numberpeopel" aria-describedby="addon-wrapping" name="numberpeopel" >
                         </div>
                     </div>
@@ -62,12 +69,11 @@
                             <span class="text-white mt-5">Total</span>
                             <span class="c_underTitleResult">/ person</span>
                         </div>
-                        <!-- <span class="InterBold fontSize40 c_calcPrice mt-5">$0.00</span> -->
                         <div id="Total"><span class="InterBold fontSize40 c_calcPrice">$0.00</span></div>
                     </div>
                 </div>
 
-                <div class="btnReset mt-5 InterBold" id="Reset">
+                <div class="btnReset mt-5 InterBold btnResetDisable" id="Reset">
                     Reset
                 </div>
             </div>
