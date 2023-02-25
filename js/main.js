@@ -1,6 +1,7 @@
 let tipPersent = 0
 
-function calcResult() {
+function calcResult(data) {
+    tipPersent = isNaN(data) !== true && data
     let valueInputBill = parseInt($(`input[name=bill]`).val())
     let valueInputNumber = parseInt($(`input[name=numberpeopel]`).val())
     let calc = valueInputBill / valueInputNumber 
@@ -19,7 +20,7 @@ function calcResult() {
         $(`#Total`).html(`<span class="InterBold fontSize40 c_calcPrice">$${calc}</span>`);
     }}
 }
-    
+
 
 $('input[name=bill]').on("input" , function(e){
     calcResult()
@@ -31,16 +32,22 @@ $('input[name=numberpeopel]').on("input" , function(e){
 
 $(document).on("click","#tipPercent",function(e) {
     let percentTip = e.currentTarget.innerText.split("%")[0]
-    tipPersent = parseInt(percentTip)
-    calcResult()
+    calcResult(parseInt(percentTip))
+    $(`input[name=custumTip]`).val(parseInt(percentTip))
 });
 
 
 $(document).on("click","#Reset",function(e) {
-    // $('#fileId').val('');
+    tipPersent = 0
     $(`input[name=bill]`).val('')
     $(`input[name=numberpeopel]`).val('')
-    tipPersent = 0
+    $(`input[name=custumTip]`).val('')
     $(`#tipAmountPerson`).html(`<span class="InterBold fontSize40 c_calcPrice">$0.00</span>`);
-        $(`#Total`).html(`<span class="InterBold fontSize40 c_calcPrice">$0.00</span>`)
+    $(`#Total`).html(`<span class="InterBold fontSize40 c_calcPrice">$0.00</span>`)
+});
+
+
+$('input[name=custumTip]').on("input" , function(e){
+    let valueInputcustumTip = parseInt($(`input[name=custumTip]`).val())
+    calcResult(valueInputcustumTip)
 });
