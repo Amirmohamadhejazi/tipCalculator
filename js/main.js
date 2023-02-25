@@ -4,13 +4,13 @@ function calcResult(data) {
     tipPersent = isNaN(data) !== true && data
     let valueInputBill = parseInt($(`input[name=bill]`).val())
     let valueInputNumber = parseInt($(`input[name=numberpeopel]`).val())
-    let calc = valueInputBill / valueInputNumber 
-
+    let calc =  floatEditNum(valueInputBill / valueInputNumber ) 
+    
     if(tipPersent!==0){
         if(valueInputBill !== 0 && valueInputBill !== "" && valueInputNumber !== 0 && valueInputNumber !== "" &&
          isNaN(valueInputBill) !== true && isNaN(valueInputNumber) !== true){
         let calcWithTip = calc / 100 * tipPersent
-        let MoneybyTip = calc + calcWithTip
+        let MoneybyTip = floatEditNum(calc + calcWithTip)
         $(`#tipAmountPerson`).html(`<span class="InterBold fontSize40 c_calcPrice">$${MoneybyTip}</span>`);
         $(`#Total`).html(`<span class="InterBold fontSize40 c_calcPrice">$${calc}</span>`)
     }
@@ -19,6 +19,10 @@ function calcResult(data) {
         isNaN(valueInputBill) !== true && isNaN(valueInputNumber) !== true){
         $(`#Total`).html(`<span class="InterBold fontSize40 c_calcPrice">$${calc}</span>`);
     }}
+
+    function floatEditNum(Num){
+        return Math.floor(Num * 1000) / 1000
+    }
 }
 
 
