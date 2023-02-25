@@ -1,5 +1,4 @@
 let tipPersent = 0
-
 function calcResult(data) {
     tipPersent = isNaN(data) !== true && data
     let valueInputBill = parseInt($(`input[name=bill]`).val())
@@ -25,7 +24,6 @@ function calcResult(data) {
     }
 }
 
-
 $('input[name=bill]').on("input" , function(e){
     calcResult()
 });
@@ -40,7 +38,6 @@ $(document).on("click","#tipPercent",function(e) {
     $(`input[name=custumTip]`).val(parseInt(percentTip))
 });
 
-
 $(document).on("click","#Reset",function(e) {
     tipPersent = 0
     $(`input[name=bill]`).val('')
@@ -49,7 +46,6 @@ $(document).on("click","#Reset",function(e) {
     $(`#tipAmountPerson`).html(`<span class="InterBold fontSize40 c_calcPrice">$0.00</span>`);
     $(`#Total`).html(`<span class="InterBold fontSize40 c_calcPrice">$0.00</span>`)
 });
-
 
 $('input[name=custumTip]').on("input" , function(e){
     let valueInputcustumTip = parseInt($(`input[name=custumTip]`).val())

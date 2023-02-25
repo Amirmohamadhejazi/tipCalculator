@@ -151,6 +151,11 @@ p{
     color: white;
     bottom: 0;
     cursor: pointer;
+    transition: 0.2s;
+}
+.btnReset:hover{
+    background-color: #26c2ad;
+    transition: 0.2s;
 }
 
 
@@ -192,6 +197,7 @@ input[type=number] {
 .customInputTip{
     background-color: #00474b;
     color:white;
+    text-align: center;
     
 
 }.customInputTip:focus{
